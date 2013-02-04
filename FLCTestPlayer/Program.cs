@@ -23,6 +23,8 @@ namespace FLCTestPlayer
 
             file = new FLCFile(File.OpenRead("Test.flc"));
             file.OnFrameUpdated += file_OnFrameUpdated;
+            file.OnPlaybackFinished += file_OnPlaybackFinished;
+            file.OnPlaybackStarted += file_OnPlaybackStarted;
             file.ShouldLoop = false;
 
             file.Open();
@@ -34,7 +36,17 @@ namespace FLCTestPlayer
             }
         }
 
-        static unsafe void file_OnFrameUpdated()
+        static void file_OnPlaybackStarted(FLCFile file)
+        {
+            Console.WriteLine("Playback started");
+        }
+
+        static void file_OnPlaybackFinished(FLCFile file)
+        {
+            Console.WriteLine("Playback finished");
+        }
+
+        static unsafe void file_OnFrameUpdated(FLCFile file)
         {
             FLCColor[] colors = file.GetFramebufferCopy();
 
