@@ -8,21 +8,22 @@ Layout
 ------
 
 FLCLib/
-	Contains the source code for all supported variants/platforms.
+ - Contains the source code for all supported variants/platforms.
 FLCPlayer.Metro/
-	Contains the source code for a Windows Modern UI test player (uses the projects in FLCLib/)
+ - Contains the source code for a Windows Modern UI test player (uses the projects in FLCLib/)
 FLCTestPlayer/
-	Contains the source code for generic test player (uses the projects in FLCLib/)
+ - Contains the source code for generic test player (uses the projects in FLCLib/)
 
 FLCPlayer.Metro.sln
-	Solution file for the Windows Modern UI test player.
+ - Solution file for the Windows Modern UI test player.
 FLCTestPlayer.sln
-	Solution file for the generic test player.
+ - Solution file for the generic test player.
 
 
 Usage
 -----
 If you have one of the supported platforms, check one of the test player projects. The code isn't very clean, but should be largely self-explanatory.
+
 Otherwise, create a new project for your platform and add a reference to FLCLib/FLCLibCS.csproj. Open the flc file by instantiating a new object of class FLCFile, set up the callbacks (especially OnFrameUpdated) and call Play(). Whenever OnFrameUpdated gets invoked, use FLCFile.GetFramebufferCopy () to obtain an array of RGBA pixel data. FLCFile has public Width and Height properties to help you interpret that array. Then use your platform specific rendering methods to display that pixel data.
 
 
