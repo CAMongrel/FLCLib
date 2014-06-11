@@ -8,13 +8,14 @@ Layout
 ------
 
 FLCLib/
- - Contains the source code for all supported variants/platforms.
+ - Contains the source code for all supported variants/platforms, as well as a generic C# only implementation (which is the base for all other variants).
 
 FLCPlayer.Metro/
  - Contains the source code for a Windows Modern UI test player (uses the projects in FLCLib/)
 
 FLCTestPlayer/
  - Contains the source code for generic test player (uses the projects in FLCLib/)
+
 
 
 FLCPlayer.Metro.sln
