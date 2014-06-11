@@ -112,7 +112,7 @@
     <Compile Include="FLCFrameBuffer.cs" />
     <Compile Include="FLCHeader.cs" />
     <Compile Include="FLCFile.cs" />
-    <Compile Include="FLCPlayer.cs" />
+    <Compile Include="FLCPlayer.Metro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

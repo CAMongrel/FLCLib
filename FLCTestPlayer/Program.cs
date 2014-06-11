@@ -41,9 +41,9 @@ namespace FLCTestPlayer
             Console.WriteLine("Playback started");
         }
 
-        static void file_OnPlaybackFinished(FLCFile file)
+      static void file_OnPlaybackFinished(FLCFile file, bool didFinishNormally)
         {
-            Console.WriteLine("Playback finished");
+         Console.WriteLine("Playback finished; " + didFinishNormally);
         }
 
         static unsafe void file_OnFrameUpdated(FLCFile file)

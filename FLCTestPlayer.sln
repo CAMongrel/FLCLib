@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLCTestPlayer", "FLCTestPlayer\FLCTestPlayer.csproj", "{A0B00675-87A1-490A-8CA7-8FBC82DD426B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLCLib.Windows", "FLCLib\FLCLib.Windows.csproj", "{4A306BE0-18AF-4021-B4E4-4258465F9C0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLCLibCS", "FLCLib\FLCLibCS.csproj", "{4A306BE0-18AF-4021-B4E4-4258465F9C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLCLib.PCL", "FLCLib\FLCLib.PCL.csproj", "{590E5A1C-7A66-436B-819F-6D730C17D3A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLCLib.MonoGame", "FLCLib\FLCLib.MonoGame.csproj", "{005BA35E-94DD-43B1-9454-2118336A663F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +15,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005BA35E-94DD-43B1-9454-2118336A663F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005BA35E-94DD-43B1-9454-2118336A663F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005BA35E-94DD-43B1-9454-2118336A663F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005BA35E-94DD-43B1-9454-2118336A663F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A306BE0-18AF-4021-B4E4-4258465F9C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A306BE0-18AF-4021-B4E4-4258465F9C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A306BE0-18AF-4021-B4E4-4258465F9C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A306BE0-18AF-4021-B4E4-4258465F9C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590E5A1C-7A66-436B-819F-6D730C17D3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590E5A1C-7A66-436B-819F-6D730C17D3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590E5A1C-7A66-436B-819F-6D730C17D3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B00675-87A1-490A-8CA7-8FBC82DD426B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FLCTestPlayer\FLCTestPlayer.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

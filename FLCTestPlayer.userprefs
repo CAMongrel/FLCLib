@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FLCTestPlayer/Program.cs">
+    <Files>
+      <File FileName="FLCLib/FLCColor.cs" Line="1" Column="1" />
+      <File FileName="FLCTestPlayer/Program.cs" Line="24" Column="1" />
+      <File FileName="FLCLib/FLCChunk.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/FLCChunkHeader.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/FLCPlayer.MonoGame.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkByteRun.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkDeltaFLI.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkDeltaFLC.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkFLICopy.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkColor256.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkUnknown.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/Chunks/FLCChunkFrameType.cs" Line="1" Column="1" />
+      <File FileName="FLCLib/FLCFile.cs" Line="19" Column="47" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

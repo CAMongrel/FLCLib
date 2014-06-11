@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0B00675-87A1-490A-8CA7-8FBC82DD426B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4A306BE0-18AF-4021-B4E4-4258465F9C0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FLCTestPlayer</RootNamespace>
-    <AssemblyName>FLCTestPlayer</AssemblyName>
+    <RootNamespace>FLCLibCS</RootNamespace>
+    <AssemblyName>FLCLibCS</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseMSBuildEngine>False</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,22 +21,18 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Chunks\FLCChunkByteRun.cs" />
+    <Compile Include="Chunks\FLCChunkColor256.cs" />
+    <Compile Include="Chunks\FLCChunkDeltaFLC.cs" />
+    <Compile Include="Chunks\FLCChunkDeltaFLI.cs" />
+    <Compile Include="Chunks\FLCChunkFLICopy.cs" />
+    <Compile Include="Chunks\FLCChunkFrameType.cs" />
+    <Compile Include="Chunks\FLCChunkUnknown.cs" />
+    <Compile Include="FLCChunk.cs" />
+    <Compile Include="FLCChunkHeader.cs" />
+    <Compile Include="FLCColor.cs" />
+    <Compile Include="FLCFile.cs" />
+    <Compile Include="FLCFrameBuffer.cs" />
+    <Compile Include="FLCHeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -59,10 +63,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <ProjectReference Include="..\FLCLib\FLCLibCS.csproj">
-      <Project>{4A306BE0-18AF-4021-B4E4-4258465F9C0D}</Project>
-      <Name>FLCLibCS</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
