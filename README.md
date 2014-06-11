@@ -9,13 +9,17 @@ Layout
 
 FLCLib/
  - Contains the source code for all supported variants/platforms.
+
 FLCPlayer.Metro/
  - Contains the source code for a Windows Modern UI test player (uses the projects in FLCLib/)
+
 FLCTestPlayer/
  - Contains the source code for generic test player (uses the projects in FLCLib/)
 
+
 FLCPlayer.Metro.sln
  - Solution file for the Windows Modern UI test player.
+
 FLCTestPlayer.sln
  - Solution file for the generic test player.
 
@@ -31,6 +35,7 @@ License
 -------
 
 Copyright (c) 2014, Henning Thöle
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
