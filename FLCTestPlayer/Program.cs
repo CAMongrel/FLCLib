@@ -1,14 +1,9 @@
 ﻿using FLCLib;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FLCTestPlayer
 {
@@ -41,34 +36,35 @@ namespace FLCTestPlayer
             Console.WriteLine("Playback started");
         }
 
-      static void file_OnPlaybackFinished(FLCFile file, bool didFinishNormally)
+        static void file_OnPlaybackFinished(FLCFile file, bool didFinishNormally)
         {
-         Console.WriteLine("Playback finished; " + didFinishNormally);
+            Console.WriteLine("Playback finished; " + didFinishNormally);
         }
 
         static unsafe void file_OnFrameUpdated(FLCFile file)
         {
             FLCColor[] colors = file.GetFramebufferCopy();
 
-            Bitmap bm = new Bitmap(file.Width, file.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            BitmapData bd = bm.LockBits(new Rectangle(0, 0, file.Width, file.Height), System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-
-            byte* ptr = (byte*)bd.Scan0.ToPointer();
-            for (int y = 0; y < file.Height; y++)
+            Image<Rgba32> image = new Image<Rgba32>(file.Width, file.Height);
+            image.ProcessPixelRows((accessor) =>
             {
-                for (int x = 0; x < file.Width; x++)
+                for (int y = 0; y < accessor.Height; y++)
                 {
-                    FLCColor col = colors[x + (y * file.Width)];
+                    var span = accessor.GetRowSpan(y);
+                    for (int x = 0; x < accessor.Width; x++)
+                    {
+                        FLCColor col = colors[x + (y * file.Width)];
 
-                    *ptr++ = col.B;
-                    *ptr++ = col.G;
-                    *ptr++ = col.R;
-                    *ptr++ = col.A;
+                        span[x].R = col.R;
+                        span[x].G = col.G;
+                        span[x].B = col.B;
+                        span[x].A = col.A;
+                    }
                 }
-            }
-            bm.UnlockBits(bd);
+                
+            });
 
-            bm.Save("Images/image" + counter++ + ".jpg", ImageFormat.Jpeg);
+            image.SaveAsJpeg("Images/image" + counter++ + ".jpg");
         }
     }
 }
